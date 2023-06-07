@@ -8,14 +8,15 @@ import {
 } from "@/state/api";
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid, GridCellParams } from "@mui/x-data-grid";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { Cell, Pie, PieChart } from "recharts";
+import Loader from "../Loader";
 
 const Row3 = () => {
   const { palette } = useTheme();
   const pieColors = [palette.primary[800], palette.primary[500]];
 
-  const { data: kpiData } = useGetKpisQuery();
+  const { data: kpiData, isLoading } = useGetKpisQuery();
   const { data: productData } = useGetProductsQuery();
   const { data: transactionData } = useGetTransactionsQuery();
 
@@ -112,13 +113,17 @@ const Row3 = () => {
             },
           }}
         >
-          <DataGrid
-            columnHeaderHeight={25}
-            rowHeight={35}
-            hideFooter={true}
-            rows={productData || []}
-            columns={productColumns}
-          />
+          {isLoading ? (
+            <Loader margin="3rem auto" />
+          ) : (
+            <DataGrid
+              columnHeaderHeight={25}
+              rowHeight={35}
+              hideFooter={true}
+              rows={productData || []}
+              columns={productColumns}
+            />
+          )}
         </Box>
       </DashboardBox>
       <DashboardBox gridArea="h">
@@ -146,13 +151,17 @@ const Row3 = () => {
             },
           }}
         >
-          <DataGrid
-            columnHeaderHeight={25}
-            rowHeight={35}
-            hideFooter={true}
-            rows={transactionData || []}
-            columns={transactionColumns}
-          />
+          {isLoading ? (
+            <Loader margin="3rem auto" />
+          ) : (
+            <DataGrid
+              columnHeaderHeight={25}
+              rowHeight={35}
+              hideFooter={true}
+              rows={transactionData || []}
+              columns={transactionColumns}
+            />
+          )}
         </Box>
       </DashboardBox>
       <DashboardBox gridArea="i">
@@ -179,6 +188,7 @@ const Row3 = () => {
           ))}
         </FlexBetween>
       </DashboardBox>
+
       <DashboardBox gridArea="j">
         <BoxHeader
           title="Overall Summary and Explanation Data"
