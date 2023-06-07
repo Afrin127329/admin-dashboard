@@ -19,6 +19,7 @@ In addition to these features, Finanseer incorporates advanced predictive capabi
 - react 18.2.0
 - react-router-dom 6.8.2
 - metarial-ui
+- typescript
 - machine learning
 - metarial-ui-data-grid
 - regression 2.0.1
