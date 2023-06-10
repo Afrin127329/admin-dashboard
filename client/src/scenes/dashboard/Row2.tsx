@@ -69,7 +69,7 @@ const Row2 = () => {
         />
         <ResponsiveContainer width="100%" height="100%">
           {isLoading ? (
-            <Loader margin="3rem auto" />
+            <Loader />
           ) : (
             <LineChart
               data={operationalExpenses}
@@ -168,7 +168,7 @@ const Row2 = () => {
         <BoxHeader title="Product Prices vs Expenses" sideText="+4%" />
         <ResponsiveContainer width="100%" height="100%">
           {isLoading ? (
-            <Loader margin="3rem auto" />
+            <Loader />
           ) : (
             <ScatterChart
               margin={{

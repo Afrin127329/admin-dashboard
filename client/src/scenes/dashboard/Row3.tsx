@@ -114,7 +114,7 @@ const Row3 = () => {
           }}
         >
           {isLoading ? (
-            <Loader margin="3rem auto" />
+            <Loader />
           ) : (
             <DataGrid
               columnHeaderHeight={25}
@@ -152,7 +152,7 @@ const Row3 = () => {
           }}
         >
           {isLoading ? (
-            <Loader margin="3rem auto" />
+            <Loader />
           ) : (
             <DataGrid
               columnHeaderHeight={25}

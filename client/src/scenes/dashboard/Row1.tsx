@@ -75,7 +75,7 @@ const Row1 = () => {
         />
         <ResponsiveContainer width="100%" height="100%">
           {isLoading ? (
-            <Loader margin="3rem auto" />
+            <Loader />
           ) : (
             <AreaChart
               width={500}
@@ -154,7 +154,7 @@ const Row1 = () => {
         />
         <ResponsiveContainer width="100%" height="100%">
           {isLoading ? (
-            <Loader margin="3rem auto" />
+            <Loader />
           ) : (
             <LineChart
               width={500}
@@ -218,7 +218,7 @@ const Row1 = () => {
         />
         <ResponsiveContainer width="100%" height="100%">
           {isLoading ? (
-            <Loader margin="3rem auto" />
+            <Loader />
           ) : (
             <BarChart
               width={500}
