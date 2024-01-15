@@ -8,13 +8,12 @@ USER app
 
 WORKDIR /app
 ENV VITE_BASE_URL=http://localhost:8080
-COPY package.json package-lock.json ./
+COPY . .
+
 USER root
-RUN chown -R app:app
+RUN chown -R app:app .
 USER app
 RUN npm install
-COPY . .
-ENV VITE_BASE_URL=/app/client/
 EXPOSE 5173
 CMD [ "npm", "run", "dev" ]
 
